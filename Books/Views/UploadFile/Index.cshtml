@@ -1,0 +1,16 @@
+﻿@model Books.Models.BigViewModel
+@{
+    ViewBag.Title = "Upload";
+}
+
+<h2>Upload</h2>
+@using (Html.BeginForm("Index", "UploadFile", FormMethod.Post, new { enctype = "multipart/form-data", style = "padding: 0 5vw;" }))
+{
+    <div class="input-field">
+        <input type="file" name="excelBooks" id="BooksData" onchange="fileCheck(this);" />
+    </div>
+    <div class="input-field">
+        <input type="file" name="excelBarcode" id="BarcodeData" onchange="fileCheck(this);" />
+    </div>
+        <button class="waves-effect waves-light btn red center" style="display: block;">Upload</button>
+}

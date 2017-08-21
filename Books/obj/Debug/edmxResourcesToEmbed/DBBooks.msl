@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBBooksModelStoreContainer" CdmEntityContainer="DBBooksEntities">
+    <EntitySetMapping Name="tblBarcodes">
+      <EntityTypeMapping TypeName="DBBooksModel.tblBarcode">
+        <MappingFragment StoreEntitySet="tblBarcode">
+          <ScalarProperty Name="barcodeID" ColumnName="barcodeID" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBooks">
+      <EntityTypeMapping TypeName="DBBooksModel.tblBook">
+        <MappingFragment StoreEntitySet="tblBooks">
+          <ScalarProperty Name="BookID" ColumnName="BookID" />
+          <ScalarProperty Name="barcode" ColumnName="barcode" />
+          <ScalarProperty Name="itemcallnumber" ColumnName="itemcallnumber" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="publishercode" ColumnName="publishercode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

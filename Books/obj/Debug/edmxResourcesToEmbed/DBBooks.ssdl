@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBBooksModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblBarcode">
+    <Key>
+      <PropertyRef Name="barcodeID" />
+    </Key>
+    <Property Name="barcodeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Barcode" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tblBooks">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="barcode" Type="nvarchar(max)" />
+    <Property Name="itemcallnumber" Type="nvarchar(max)" />
+    <Property Name="author" Type="nvarchar(max)" />
+    <Property Name="title" Type="nvarchar(max)" />
+    <Property Name="publishercode" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="DBBooksModelStoreContainer">
+    <EntitySet Name="tblBarcode" EntityType="Self.tblBarcode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBooks" EntityType="Self.tblBooks" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

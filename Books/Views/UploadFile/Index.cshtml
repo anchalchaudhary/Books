@@ -7,10 +7,14 @@
 @using (Html.BeginForm("Index", "UploadFile", FormMethod.Post, new { enctype = "multipart/form-data", style = "padding: 0 5vw;" }))
 {
     <div class="input-field">
+        <label>Upload Data for Books:</label>
         <input type="file" name="excelBooks" id="BooksData" onchange="fileCheck(this);" />
     </div>
+    <br />
     <div class="input-field">
+        <label>Upload Data for Barcode:</label>
         <input type="file" name="excelBarcode" id="BarcodeData" onchange="fileCheck(this);" />
     </div>
+    <br />
         <button class="waves-effect waves-light btn red center" style="display: block;">Upload</button>
 }

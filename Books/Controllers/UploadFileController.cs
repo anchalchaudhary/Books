@@ -54,8 +54,8 @@ namespace Books.Controllers
 
                 //Barcode
                 Excel.Workbook workbookBarcode = application.Workbooks.Open(pathBarcode);
-                Excel.Worksheet worksheetBooksBarcode = workbookBarcode.ActiveSheet;
-                Excel.Range rangeBarcode = worksheetBooksBarcode.UsedRange;
+                Excel.Worksheet worksheetBarcode = workbookBarcode.ActiveSheet;
+                Excel.Range rangeBarcode = worksheetBarcode.UsedRange;
 
                 //List for books
                 List<tblBook> datatblBooks = new List<tblBook>();
@@ -91,11 +91,11 @@ namespace Books.Controllers
                     }
                 }
 
-                
+
 
                 //list for books with no barcode in datatblBarcode 
                 List<tblBook> tblBooksList = new List<tblBook>();
-                
+
                 List<tblBook> newList = new List<tblBook>();
                 newList.Add(new tblBook
                 {
@@ -148,9 +148,24 @@ namespace Books.Controllers
                 Response.Output.Write(objStringWriter.ToString());
                 Response.Flush();
                 Response.End();
+
+
+                workbookBooks.Close(true, null, null);
+                workbookBarcode.Close(true, null, null);
+
+                application.Quit();
+
+                Marshal.ReleaseComObject(worksheetBooks);
+                Marshal.ReleaseComObject(worksheetBarcode);
+                Marshal.ReleaseComObject(application);
+
                 return View("Index");
             }
-            return View("Index");
+            else
+            {
+                ViewBag.InvalidFormat = "File should be in xls or xlsx format.";
+                return View("Index");
+            }
         }
     }
 }

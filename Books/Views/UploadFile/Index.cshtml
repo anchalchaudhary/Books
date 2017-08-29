@@ -8,13 +8,19 @@
 {
     <div class="input-field">
         <label>Upload Data for Books:</label>
-        <input type="file" name="excelBooks" id="BooksData" onchange="fileCheck(this);" />
+        <input type="file" name="excelBooks" required id="BooksData" onchange="fileCheck(this);" />
     </div>
     <br />
     <div class="input-field">
         <label>Upload Data for Barcode:</label>
-        <input type="file" name="excelBarcode" id="BarcodeData" onchange="fileCheck(this);" />
+        <input type="file" name="excelBarcode" required id="BarcodeData" onchange="fileCheck(this);" />
     </div>
     <br />
+    <div class="error">
+        @ViewBag.InvalidData
+    </div>
         <button class="waves-effect waves-light btn red center" style="display: block;">Upload</button>
 }
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

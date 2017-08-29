@@ -132,16 +132,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="DBBooks.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DBBooks.Context.cs</LastGenOutput>
-      <DependentUpon>DBBooks.edmx</DependentUpon>
-    </Content>
-    <Content Include="DBBooks.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBBooks.edmx</DependentUpon>
-      <LastGenOutput>DBBooks.cs</LastGenOutput>
-    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
@@ -160,21 +150,6 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\UploadFileController.cs" />
-    <Compile Include="DBBooks.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBBooks.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBBooks.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBBooks.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBBooks.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBBooks.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -182,22 +157,9 @@
     <Compile Include="Models\BigViewModel.cs" />
     <Compile Include="Models\BooksModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="tblBarcode.cs">
-      <DependentUpon>DBBooks.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tblBook.cs">
-      <DependentUpon>DBBooks.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <EntityDeploy Include="DBBooks.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBBooks.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="DBBooks.edmx.diagram">
-      <DependentUpon>DBBooks.edmx</DependentUpon>
-    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />

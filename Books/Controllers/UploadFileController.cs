@@ -14,8 +14,7 @@ namespace Books.Controllers
 {
     public class UploadFileController : Controller
     {
-
-        DBBooksEntities db = new DBBooksEntities();
+        
         // GET: UploadFile
         public ActionResult Index()
         {
@@ -58,17 +57,17 @@ namespace Books.Controllers
                 Excel.Range rangeBarcode = worksheetBarcode.UsedRange;
 
                 //List for books
-                List<tblBook> datatblBooks = new List<tblBook>();
+                List<BooksModel> datatblBooks = new List<BooksModel>();
 
                 //List for barcodes
-                List<tblBarcode> datatblBarcode = new List<tblBarcode>();
+                List<BarcodeModel> datatblBarcode = new List<BarcodeModel>();
 
                 //importing books excel data into list for books
                 for (int row = 1; row <= rangeBooks.Rows.Count; row++)
                 {
                     if (true)
                     {
-                        datatblBooks.Add(new tblBook
+                        datatblBooks.Add(new BooksModel
                         {
                             barcode = ((Excel.Range)rangeBooks.Cells[row, 1]).Text,
                             itemcallnumber = ((Excel.Range)rangeBooks.Cells[row, 2]).Text,
@@ -84,7 +83,7 @@ namespace Books.Controllers
                 {
                     if (true)
                     {
-                        datatblBarcode.Add(new tblBarcode
+                        datatblBarcode.Add(new BarcodeModel
                         {
                             Barcode = ((Excel.Range)rangeBarcode.Cells[row, 1]).Text
                         });
@@ -94,10 +93,10 @@ namespace Books.Controllers
 
 
                 //list for books with no barcode in datatblBarcode 
-                List<tblBook> tblBooksList = new List<tblBook>();
+                List<BooksModel> tblBooksList = new List<BooksModel>();
 
-                List<tblBook> newList = new List<tblBook>();
-                newList.Add(new tblBook
+                List<BooksModel> newList = new List<BooksModel>();
+                newList.Add(new BooksModel
                 {
                     barcode = "",
                     itemcallnumber = "",
@@ -122,7 +121,7 @@ namespace Books.Controllers
                     {
                         if (itemBook.barcode != "barcode")
                         {
-                            tblBook objtblBook = new tblBook();
+                            BooksModel objtblBook = new BooksModel();
                             objtblBook.barcode = itemBook.barcode;
                             objtblBook.itemcallnumber = itemBook.itemcallnumber;
                             objtblBook.author = itemBook.author;
